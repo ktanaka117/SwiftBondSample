@@ -67,6 +67,10 @@ class ViewController: UIViewController {
         // MARK: - Bidirectional Binding
         // Binding textField and label each other.
 //        textField.bnd_text.bidirectionalBindTo(label.bnd_text)
+        
+        // Two way bindin is the same to two unidirectional bindings.
+//        textField.bnd_text.bindTo(label.bnd_text)
+//        label.bnd_text.bindTo(textField.bnd_text)
     }
     
     override func viewDidAppear(animated: Bool) {
