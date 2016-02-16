@@ -38,39 +38,39 @@ class ViewController: UIViewController {
         
         // MARK: - Binding
         // Binding textField to label via viewModel.
-        textField.bnd_text.bindTo(viewModel.text)
-        viewModel.text.bindTo(label.bnd_text)
+        textField.bnd_text.bindTo(viewModel.text).disposeIn(bnd_bag)
+        viewModel.text.bindTo(label.bnd_text).disposeIn(bnd_bag)
 
         // Binding by adding new observer
 //        textField.bnd_text.observeNew { [unowned self] text in
 //            self.viewModel.text.value = text
-//        }
+//        }.disposeIn(bnd_bag)
 //        viewModel.text.observeNew { [unowned self] text in
 //            self.label.text = text
-//        }
-        
+//        }.disposeIn(bnd_bag)
+    
         
         
         // When you want to process string, you do that before binding.
 //        textField.bnd_text
 //            .map { text in return "I want \(text!)" }
-//            .bindTo(viewModel.text)
-//        viewModel.text.bindTo(label.bnd_text)
+//            .bindTo(viewModel.text).disposeIn(bnd_bag)
+//        viewModel.text.bindTo(label.bnd_text).disposeIn(bnd_bag)
         
         // Other Binding pattern
-//        textField.bnd_text
-//            .reduce("I want") { $0 + " " + $1! }.bindTo(viewModel.text)
-//        viewModel.text.bindTo(label.bnd_text)
+        textField.bnd_text
+//            .reduce("I want") { $0 + " " + $1! }.bindTo(viewModel.text).disposeIn(bnd_bag)
+//        viewModel.text.bindTo(label.bnd_text).disposeIn(bnd_bag)
         
         
         
         // MARK: - Bidirectional Binding
         // Binding textField and label each other.
-//        textField.bnd_text.bidirectionalBindTo(label.bnd_text)
+//        textField.bnd_text.bidirectionalBindTo(label.bnd_text).disposeIn(bnd_bag)
         
-        // Two way bindin is the same to two unidirectional bindings.
-//        textField.bnd_text.bindTo(label.bnd_text)
-//        label.bnd_text.bindTo(textField.bnd_text)
+        // Two way binding is the same to two unidirectional bindings.
+//        textField.bnd_text.bindTo(label.bnd_text).disposeIn(bnd_bag)
+//        label.bnd_text.bindTo(textField.bnd_text).disposeIn(bnd_bag)
     }
     
     override func viewDidAppear(animated: Bool) {
