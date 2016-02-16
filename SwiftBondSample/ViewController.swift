@@ -40,6 +40,14 @@ class ViewController: UIViewController {
         // Binding textField to label via viewModel.
         textField.bnd_text.bindTo(viewModel.text)
         viewModel.text.bindTo(label.bnd_text)
+
+        // Binding by adding new observer
+//        textField.bnd_text.observeNew { [unowned self] text in
+//            self.viewModel.text.value = text
+//        }
+//        viewModel.text.observeNew { [unowned self] text in
+//            self.label.text = text
+//        }
         
         
         
