@@ -43,6 +43,19 @@ class ViewController: UIViewController {
         
         
         
+        // When you want to process string, you do that before binding.
+//        textField.bnd_text
+//            .map { text in return "I want \(text!)" }
+//            .bindTo(viewModel.text)
+//        viewModel.text.bindTo(label.bnd_text)
+        
+        // Other Binding pattern
+//        textField.bnd_text
+//            .reduce("I want") { $0 + " " + $1! }.bindTo(viewModel.text)
+//        viewModel.text.bindTo(label.bnd_text)
+        
+        
+        
         // MARK: - Bidirectional Binding
         // Binding textField and label each other.
 //        textField.bnd_text.bidirectionalBindTo(label.bnd_text)
